@@ -23,9 +23,21 @@ class Login extends React.Component {
       });
   };
 
+  handleSubmit = (e) => {
+    e.preventDefault()
+    fetchLoginUser(this.state.fields)
+    .then(resp => {
+      this.props.handleLoginUser(resp.user)
+      localStorage.setItem('token', resp.jwt)
+    })
+  }
+
 
   render() {
     const { fields } = this.state;
+    if (this.props.loggedIn) {
+      return <Redirect to='profile' />
+    } else {
     return (
       <div>
         {this.state.error ? <h1>Try again...</h1> : null}
@@ -56,7 +68,7 @@ class Login extends React.Component {
           </form>
         </div>
       </div>
-    );
+    )}
   }
 }
 

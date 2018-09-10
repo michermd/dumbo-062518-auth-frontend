@@ -1,4 +1,5 @@
 import React from 'react'
+import withAuth from '../hoc/withAuth'
 
 class Secret extends React.Component {
   state = {
@@ -21,6 +22,7 @@ class Secret extends React.Component {
   }
 
   render () {
+    console.log(this.props)
     return (
       <div className='container'>
         <h3> {this.state.secret} </h3>
@@ -29,4 +31,4 @@ class Secret extends React.Component {
   }
 };
 
-export default Secret
+export default withAuth(Secret)

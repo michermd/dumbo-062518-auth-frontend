@@ -3,7 +3,7 @@ import React from 'react'
 const NotFound = props => {
   return (
     <div className='container'>
-        <img src={'https://memegenerator.net/img/instances/29112832.jpg'} alt='dwight'/>
+        <img src={'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZIfMzLg7OLi9ExPDcznYvWFMXEtiXQfu9mFKEUhaLZWVQwaU9gg'} alt='dwight'/>
     </div>
   );
 };

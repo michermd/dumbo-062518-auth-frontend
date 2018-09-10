@@ -1,5 +1,6 @@
 import React from 'react'
 import { Redirect, Link } from 'react-router-dom'
+import withAuth from '../hoc/withAuth'
 
 const Profile = props => {
   return (
@@ -10,4 +11,4 @@ const Profile = props => {
   );
 };
 
-export default Profile
+export default withAuth(Profile)

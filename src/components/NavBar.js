@@ -12,12 +12,15 @@ const NavBar = props => {
         </h2>
       </Link>
       <div className="right menu">
-          <h5 className='item'>Welcome [insert username here]</h5>
-          <a className="item">
-            <div className="ui button">
-              Logout
-            </div>
-          </a>
+          {props.loggedIn ? (
+          <React.Fragment>
+            <h5 className='item'>Welcome {props.username}</h5>
+            <a className="item">
+              <div className="ui button" onClick={props.handleLogout}>
+                Logout
+              </div>
+            </a>
+          </React.Fragment>): null}
       </div>
     </div>
   );
